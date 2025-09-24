@@ -45,13 +45,6 @@ class KeywordEnhancedDistilBERT(nn.Module):
             nn.Linear(256, num_labels)
         )
         
-        # Attention mechanism for keyword aggregation
-        self.keyword_attention = nn.Sequential(
-            nn.Linear(768, 256),
-            nn.Tanh(),
-            nn.Linear(256, 1)
-        )
-        
         self._init_weights()
 
     def _init_weights(self):
@@ -468,7 +461,6 @@ for fold in range(1, 11):  # folds 1 to 10
 
 
 # In[ ]:
-
 
 
 
